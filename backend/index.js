@@ -19,6 +19,11 @@ app.use(bodyParaser.urlencoded({extended:false}))
 app.use('/post',express.static('post')) 
 // Available Routes
 // app.use(upload.single("image"));
+
+app.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});
+
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes")); 
 app.use("/api/diary", require("./routes/diary"));   
